@@ -1,63 +1,72 @@
-# Hobby (data engineering) Data Pipeline and Dashboard
+# Hobby (Data Engineering) Data Pipeline and Dashboard
 
 ## Overview
-This project is an end-to-end data engineering pipeline built in Python to demonstrate core skills for a junior data engineering role. It ingests raw ride-share trip data, processes it through a bronze → silver → gold data lake pattern, and outputs analytics through an interactive dashboard.
+This project is an end-to-end data engineering pipeline built in Python to demonstrate core skills for a junior data engineering role. It ingests raw e-commerce and sales data (via Kaggle API), processes it through a **bronze → silver → gold** medallion architecture, and outputs analytics through an interactive Streamlit dashboard.
 
-The goal is to showcase practical skills in ETL, data modeling, orchestration, and visualization.
+The goal is to showcase practical skills in **data ingestion, ETL, data modeling, orchestration, and visualization**.
 
 ---
 
 ## Tech Stack
-- Python (pandas, pyarrow)  
-- DuckDB (single-file OLAP warehouse)  
-- Prefect (workflow orchestration)  
-- Streamlit (dashboard and KPIs)  
-- pytest (basic data quality checks)  
+- **Python** (pandas, pyarrow)
+- **DuckDB** (single-file OLAP warehouse)
+- **KaggleHub** (dataset download)
+- **Streamlit** (dashboard and KPIs)
+- **pytest** (basic data quality checks)
 
 ---
 
 ## Architecture
 **Data flow:**  
-Raw CSV → Bronze (parquet) → Silver (fact and dimension tables) → Gold (aggregates) → Dashboard
+Raw Kaggle datasets → Bronze (raw tables) → Silver (cleaned fact/dimension tables) → Gold (aggregates & KPIs) → Dashboard
 
 ---
 
 ## Folder Structure
-
-data/raw → raw CSV (ride trips)
-data/bronze → parquet (renamed columns)
-data/silver → transformed tables (DuckDB)
-data/gold → marts (daily and hourly summaries)
-
-src/etl.py → ETL pipeline (bronze → silver → gold)
-src/flow.py → Prefect orchestration
-app/dashboard.py → Streamlit dashboard
-tests/ → data quality tests
-
+hobby-data_engineering/
+│
+├── src/
+│ ├── utils_duck.py # DB connection helpers
+│ ├── bronze_ingest.py # raw Kaggle → bronze tables
+│ ├── silver_transform.py # bronze → silver fact/dim
+│ ├── gold_aggregate.py # silver → gold marts
+│ ├── pipeline.py # orchestrates bronze → silver → gold
+│
+├── app/
+│ └── dashboard.py # Streamlit dashboard
+│
+├── tests/
+│ └── test_quality.py # pytest data quality checks
+│
+├── data/ # ignored in Git (except .gitkeep)
+│ ├── raw/ # raw CSV (Kaggle API)
+│ ├── bronze/ # parquet
+│ ├── silver/ # transformed
+│ ├── gold/ # aggregates
+│ └── lakehouse.duckdb # DuckDB file (local only, gitignored)
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
 ---
 
 ## Clone the repository and create a virtual environment:
 
-git clone https://github.com/<your-username>/rides-pipeline.git
-cd rides-pipeline
+git clone https://github.com/<your-username>/hobby-data_engineering.git
+cd hobby-data_engineering
+
+# Create venv
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
-Place a small CSV file into data/raw/rides.csv.
-
-Expected columns:
-tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count,
-trip_distance, fare_amount, tip_amount, PULocationID, DOLocationID
-
-Run the ETL pipeline:
-python src/etl.py
-Launch the dashboard:
-streamlit run app/dashboard.py
 
 --- 
 
 ## Dashboard Preview
-Insert a screenshot here to show the dashboard with KPIs and charts.
+
+<img width="1069" height="959" alt="Screenshot 2025-08-29 202734" src="https://github.com/user-attachments/assets/5906320f-ed10-4998-b48a-4ead16d017b3" />
 
 --- 
 
