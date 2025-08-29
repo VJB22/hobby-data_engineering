@@ -1,4 +1,4 @@
-# Ride-Share Data Pipeline and Dashboard
+# Hobby (data engineering) Data Pipeline and Dashboard
 
 ## Overview
 This project is an end-to-end data engineering pipeline built in Python to demonstrate core skills for a junior data engineering role. It ingests raw ride-share trip data, processes it through a bronze → silver → gold data lake pattern, and outputs analytics through an interactive dashboard.
