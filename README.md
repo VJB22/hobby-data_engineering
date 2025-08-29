@@ -52,7 +52,7 @@ Raw Kaggle datasets → Bronze (raw tables) → Silver (cleaned fact/dimension t
 
 ## Clone the repository and create a virtual environment:
 
-git clone https://github.com/<your-username>/hobby-data_engineering.git
+git clone https://github.com/<VJB22>/hobby-data_engineering.git
 cd hobby-data_engineering
 
 # Create venv
@@ -94,6 +94,5 @@ The tests verify that core tables exist and basic quality conditions are met (e.
 - Azure Synapse Analytics → silver and gold tables
 -  Power BI → dashboards
 
--  
 License
 MIT License
