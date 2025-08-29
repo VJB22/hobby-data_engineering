@@ -23,31 +23,31 @@ Raw Kaggle datasets → Bronze (raw tables) → Silver (cleaned fact/dimension t
 ---
 
 ## Folder Structure
-hobby-data_engineering/
-│
-├── src/
-│ ├── utils_duck.py # DB connection helpers
-│ ├── bronze_ingest.py # raw Kaggle → bronze tables
-│ ├── silver_transform.py # bronze → silver fact/dim
-│ ├── gold_aggregate.py # silver → gold marts
-│ ├── pipeline.py # orchestrates bronze → silver → gold
-│
-├── app/
-│ └── dashboard.py # Streamlit dashboard
-│
-├── tests/
-│ └── test_quality.py # pytest data quality checks
-│
-├── data/ # ignored in Git (except .gitkeep)
-│ ├── raw/ # raw CSV (Kaggle API)
-│ ├── bronze/ # parquet
-│ ├── silver/ # transformed
-│ ├── gold/ # aggregates
-│ └── lakehouse.duckdb # DuckDB file (local only, gitignored)
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
+## Repository Layout
+
+- **src/**
+  - `utils_duck.py` — DB connection helpers  
+  - `bronze_ingest.py` — raw Kaggle → bronze tables  
+  - `silver_transform.py` — bronze → silver fact/dim  
+  - `gold_aggregate.py` — silver → gold marts  
+  - `pipeline.py` — orchestrates bronze → silver → gold  
+
+- **app/**
+  - `dashboard.py` — Streamlit dashboard  
+
+- **tests/**
+  - `test_quality.py` — pytest data quality checks  
+
+- **data/** (ignored in Git, except `.gitkeep`)  
+  - `raw/` — raw CSVs (Kaggle API)  
+  - `bronze/` — parquet files  
+  - `silver/` — transformed tables  
+  - `gold/` — aggregates  
+  - `lakehouse.duckdb` — DuckDB file (local only, gitignored)  
+
+- `requirements.txt` — dependencies  
+- `README.md` — project overview  
+- `.gitignore` — git ignore rules  
 ---
 
 ## Clone the repository and create a virtual environment:
