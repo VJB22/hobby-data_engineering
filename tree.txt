@@ -1,0 +1,26 @@
+hobby-data_engineering/
+│
+├── src/
+│   ├── utils_duck.py         # helper functions (e.g. connect to DB)
+│   ├── bronze_ingest.py      # raw CSV → parquet (bronze)
+│   ├── silver_transform.py   # bronze → silver fact/dim tables
+│   ├── gold_aggregate.py     # silver → gold marts
+│   ├── pipeline.py           # orchestrates bronze → silver → gold
+│
+├── app/
+│   └── dashboard.py          # Streamlit dashboard
+│
+├── tests/
+│   └── test_quality.py       # pytest data quality checks
+│
+├── data/
+│   ├── raw/                  # raw CSV
+│   ├── bronze/               # parquet
+│   ├── silver/               # transformed
+│   ├── gold/                 # aggregates
+|   ├── .gitkeep/ 			   # tracks folder structure
+│   └── lakehouse.duckdb      # duckdb database file
+│
+├── requirements.txt          # dependencies
+├── README.md                 # project overview
+└── .gitignore                # ignore data, venv, cache
