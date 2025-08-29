@@ -52,7 +52,7 @@ Raw Kaggle datasets → Bronze (raw tables) → Silver (cleaned fact/dimension t
 
 ## Clone the repository and create a virtual environment:
 
-git clone https://github.com/<VJB22>/hobby-data_engineering.git
+git clone https://github.com/VJB22/hobby-data_engineering.git
 cd hobby-data_engineering
 
 # Create venv
