@@ -46,8 +46,8 @@ pip install -r requirements.txt
 Place a small CSV file into data/raw/rides.csv.
 
 Expected columns:
-tpep_pickup_datetime,tpep_dropoff_datetime,passenger_count,
-trip_distance,fare_amount,tip_amount,PULocationID,DOLocationID
+tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count,
+trip_distance, fare_amount, tip_amount, PULocationID, DOLocationID
 
 Run the ETL pipeline:
 python src/etl.py
