@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
-
 import duckdb
 from pathlib import Path
 
-# Path to project_root/data/lakehouse.duckdb
 DB_PATH = Path(__file__).resolve().parents[1] / "data" / "lakehouse.duckdb"
 
 def connect(read_only: bool = False):
@@ -22,4 +15,5 @@ def connect(read_only: bool = False):
 
 def run_sql(con, sql: str):
     """Run a SQL statement on an existing connection."""
+
     return con.execute(sql)
