@@ -21,7 +21,7 @@ def _find_file(root: str, prefer_exts=(".csv", ".tsv", ".txt", ".xlsx", ".xls"))
     for c in candidates:
         p = os.path.join(root, c)
         if os.path.exists(p):
-            return 
+            return p
         
     for dirpath, _, files in os.walk(root):
         for f in files:
@@ -74,3 +74,4 @@ def ingest():
         """)
 
     con.close()
+
