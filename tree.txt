@@ -18,10 +18,11 @@ hobby-data_engineering/
 │   ├── bronze/               # parquet
 │   ├── silver/               # transformed
 │   ├── gold/                 # aggregates
-|   ├── .gitkeep/ 			      # tracks folder structure
+|   ├── .gitkeep/ 			    # tracks folder structure
 │   └── lakehouse.duckdb      # duckdb database file
 │
 ├── requirements.txt          # dependencies
 ├── README.md                 # project overview
 
 └── .gitignore                # ignore data, venv, cache
+
